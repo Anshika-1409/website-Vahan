@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf2c7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f0c36e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 40px;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+}
+
+.menu-icon i {
+  font-size: 30px;
+  color: #333;
+}
+
+.main-content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.main-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.ride-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  
+}
+
+.ride-option {
+  background-color: #fff;
+  padding: 0px;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100px;
+  height:100px;
+  transition: transform 0.3s ease;
+}
+
+.ride-option:hover {
+  transform: translateY(-5px);
+}
+
+.ride-option img {
+  width: 80px;
+  height: 80px;
+}
+
+.ride-option p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f0c36e;
+}
+
+.footer i {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer i:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .ride-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ride-options {
+    grid-template-columns: 1fr;
+  }
+}

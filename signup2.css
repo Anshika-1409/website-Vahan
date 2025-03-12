@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #FFF1BA 0%, #FFF1BA 100%);
+  font-family: "Quicksand", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #FFF1BA ;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #080808;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  color: #070707;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #080808;
+  display: none;
+}
+
+/* Navigation Styles */
+.nav-container {
+  background: linear-gradient(90deg, #f9796d 0%, #fe9389 100%);
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-menu {
+  display: flex;
+  /* justify-content: flex-end; */
+  flex-direction: row-reverse;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu li a.active {
+  background-color: #f36855;
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  width: 220px;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  text-align: left;
+}
+
+.nav-menu li:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #333 !important;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  color: #f39f7e !important;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Banner Image - Optimized for Desktop */
+.banner-img {
+  width: 100%;
+  height: 400px; /* Increased height for desktop */
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the container without stretching */
+  object-position: center; /* Centers the image */
+  display: block;
+  transition: transform 10s ease;
+}
+
+.banner-img:hover img {
+  transform: scale(1.05);
+}
+
+/* For desktop, ensure full width display
+@media (min-width: 1200px) {
+  .banner-img {
+    height: 500px; /* Even taller on large screens */
+    /* max-width: 1600px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  /* } */ 
+/* } */
+
+/* Page Container */
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Signup Header */
+.signup-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signup-header h1 {
+  font-family: "Righteous", cursive;
+  font-size: 2.2rem;
+  color: #030303;
+  margin-bottom: 10px;
+}
+
+.signup-header p {
+  color: #070707;
+  font-size: 1.1rem;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #FCE899;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #070707;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #F26E61;
+  box-shadow: 0 0 0 3px rgba(105, 5, 5, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+/* Button Styles */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #f9796d 0%, #f9796d 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(183, 9, 9, 0.3);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(100, 4, 4, 0.4);
+  background: linear-gradient(90deg, #F26E61 30%, #f35d4f 100%);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(77, 3, 3, 0.3);
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1rem;
+}
+
+.login-link span {
+  color: #555;
+}
+
+.login-link a {
+  color: #F26E61;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #F26E61;
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: #f9796d;
+  color: white;
+  padding: 40px 5%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-bottom: 25px;
+}
+
+.social-icons span {
+  display: inline-block;
+  margin: 0 12px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icons span:hover {
+  transform: translateY(-5px);
+  color: #f79525;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #060302;
+  /* text-decoration: underline; */
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .nav-menu li a {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  /* .banner-img {
+    height: 300px; /* Smaller on medium screens */
+  /* } */ 
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-container {
+    position: relative;
+    padding: 0;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #F26E61;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+    background-color: #F26E61;
+    border-radius: 0;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    color: white !important;
+    padding-left: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white !important;
+  }
+
+  .banner-img {
+    height: 200px;
+  }
+
+  .signup-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* .banner-img {
+    height: 150px;
+    margin-bottom: 30px;
+  }
+ */
+  .signup-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .signup-header p {
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 30px 5%;
+  }
+
+  .social-icons span {
+    font-size: 1.4rem;
+    margin: 0 10px;
+  }
+
+  .footer-links a {
+    display: block;
+    margin: 10px 0;
+  }
+}

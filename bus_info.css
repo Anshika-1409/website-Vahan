@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #FFF1BA 0%, #FFF1BA 100%);
+    font-family: "Quicksand", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #FFF1BA ;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #080808;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-family: "Quicksand", sans-serif;
+    font-size: 0.9rem;
+    color: #070707;
+    letter-spacing: 1px;
+  }
+  
+  .menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #080808;
+    display: none;
+  }
+  
+  /* Navigation Styles */
+  .nav-container {
+    background: linear-gradient(90deg, #f9796d 0%, #fe9389 100%);
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    /* box-shadow: 0 4px 12px  rgba(0, 0, 0, 0.15); */
+  }
+  
+  .nav-menu {
+    display: flex;
+    /* justify-content: flex-end; */
+    flex-direction: row-reverse;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+  
+  .nav-menu li {
+    position: relative;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-menu li a.active {
+    background-color: #f36855;
+    color: white;
+  }
+  
+  .pickup-drop{
+    display: flex;
+    justify-content: space-between; /* Aligns left and right content */
+    align-items: center;
+    background: #FCE899;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Dropdown Menu */
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    text-align: left;
+  }
+  
+  .nav-menu li:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu a {
+    color: #333 !important;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+    color: #f39f7e !important;
+  }
+  
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+  }
+
+
+.bus-category {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.bus-icon {
+    text-align: center;
+    font-size: 24px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bus-list {
+    padding: 20px;
+}
+
+.bus-card {
+    background: #FCE899;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    transition: transform 0.2s ease-in-out;
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.bus-card:hover {
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.bus-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.bus-header {
+    display: flex;
+    justify-content: space-between; /* Ensures name and price are on the same line */
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fcedb0e2;
+    width:100%;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.bus-name {
+    flex: 1; /* Makes the bus name take up available space */
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column; /* Ensures "Onwards" goes below price */
+    align-items: flex-start; /* Aligns text to the right */
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.bus-header:hover{
+    cursor: pointer;
+    background-color: #f7ebbbd5;
+    /* transform: translateY(-3px); Moves the card upward */  
+    box-shadow: 6px 6px 15px rgba(246, 221, 97, 0.658);
+}
+.price {
+    font-weight: bold;
+}
+
+.onwards {
+    margin-left:10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.details {
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.details:hover {
+    color: #f13b2a;
+    text-decoration: underline;
+  }
+
+.bus-timing {
+    text-align: right;
+    font-weight: bold;
+}
+
+.duration{
+    color: hsla(0, 1%, 49%, 0.626);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bus-timing img {
+    width: 50px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.footer {
+    background-color: #f9796d;
+    color: white;
+    padding: 40px 5%;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .social-icons {
+    margin-bottom: 25px;
+  }
+  
+  .social-icons span {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons span:hover {
+    transform: translateY(-5px);
+    color: #f79525;
+  }
+  
+  .footer-links {
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #060302;
+    /* text-decoration: underline; */
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sort-btn {
+    background: #ff5733;
+    color: white;
+}
+
+.filter-btn {
+    background: #333;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .bus-card {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .bus-timing {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
