@@ -164,7 +164,7 @@
     </script>
 
     <?php
-      $con = mysqli_connect('localhost','root','Priyatosh@70333','vahan','3306');
+      $con = mysqli_connect('localhost','root','<your password>','vahan','3306');
       if(!$con){
         die("could not connect".mysqli_connect_error());
       }
